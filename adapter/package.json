@@ -1,0 +1,23 @@
+{
+  "name": "adapter",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:invalid": "tsx src-invalid/main.ts",
+    "dev:valid": "tsx src-valid/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.15.19",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "jspdf": "^3.0.1",
+    "pdf-lib": "^1.17.1",
+    "tsx": "^4.19.4"
+  }
+}
