@@ -20,7 +20,7 @@ em progresso...
 
 ### Padrões Estruturais
 
-- [Adapter](./adapter/)
+- [Adapter](./adapter/README-ADAPTER.md)
 
 <!-- - **Bridge**: Separação de abstração e implementação
 - **Composite**: Composição de objetos em estruturas de árvore
