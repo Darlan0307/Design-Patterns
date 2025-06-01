@@ -1,5 +1,5 @@
 {
-  "name": "adapter",
+  "name": "singleton",
   "type": "module",
   "version": "1.0.0",
   "main": "index.js",
@@ -16,8 +16,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "jspdf": "^3.0.1",
-    "pdf-lib": "^1.17.1",
     "tsx": "^4.19.4"
   }
 }

@@ -18,7 +18,7 @@ Quando você viaja do Brasil para a Europa pela primeira vez, você pode ter uma
 
 ### 📝 Exemplo
 
-Nesse diretório, você encontrará um exemplo de implementação do padrão de Adapter no diretório **src-valid** e outro exemplo sem a utilização do padrão no diretório **src-invalid**.
+Nesse diretório, você encontrará um exemplo de implementação do padrão Adapter no diretório **src-with-pattern** e outro exemplo sem a utilização do padrão no diretório **src-without-pattern**.
 
 #### Vantagens & Desvantagens
 

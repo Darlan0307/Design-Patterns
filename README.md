@@ -6,13 +6,17 @@ Um repositório com implementações práticas e exemplos claros dos principais 
 
 Este repositório tem como objetivo fornecer exemplos de implementação de diversos padrões de design, demonstrando situações onde podem ser aplicados. Os exemplos são organizados de forma simples, facilitando o aprendizado e a consulta rápida para desenvolvedores de todos os níveis.
 
+---
+
 ## 🧩 Padrões Incluídos
+
+> Em desenvolvimento
 
 ### Padrões Criacionais
 
-em progresso...
+- **[Singleton](./singleton/README-SINGLETON.md)**: Implementação que garante a existência de apenas uma instância de uma classe
 
-<!-- - **Singleton**: Implementação que garante a existência de apenas uma instância de uma classe
+<!--
 - **Factory Method**: Criação de objetos sem especificar a classe exata
 - **Abstract Factory**: Criação de famílias de objetos relacionados
 - **Builder**: Construção de objetos complexos passo a passo
@@ -20,7 +24,7 @@ em progresso...
 
 ### Padrões Estruturais
 
-- [Adapter](./adapter/README-ADAPTER.md)
+- **[Adapter](./adapter/README-ADAPTER.md)**: Separação de abstração e implementação
 
 <!-- - **Bridge**: Separação de abstração e implementação
 - **Composite**: Composição de objetos em estruturas de árvore
@@ -29,7 +33,7 @@ em progresso...
 
 ### Padrões Comportamentais
 
-em progresso...
+---
 
 <!-- - **Strategy**: Definição de uma família de algoritmos intercambiáveis
 - **Observer**: Notificação de mudanças para objetos dependentes
