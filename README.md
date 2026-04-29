@@ -1,6 +1,6 @@
 # Design Patterns em Prática
 
-Um repositório com implementações práticas e exemplos claros dos principais padrões de design na programação orientada a objetos.
+Um repositório com implementações práticas e exemplos claros dos principais padrões de design.
 
 ## 📋 Sobre o Projeto
 
@@ -43,6 +43,24 @@ Este repositório tem como objetivo fornecer exemplos de implementação de dive
 <!-- - **Command**: Encapsulamento de solicitações como objetos
 - **Iterator**: Acesso sequencial aos elementos de uma coleção
 - **State**: Alteração do comportamento quando o estado interno muda -->
+
+## Quando Usar Cada Padrão
+
+| Padrão                                           | Quando usar                                                                                                                                               |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **[Observer](./observer/README-OBSERVER.md)**    | Quando várias partes do sistema precisam reagir a mudanças, como eventos, webhooks, notificações ou mudanças de estado.                                   |
+| **[Factory](./factory/README-FACTORY.md)**       | Quando a criação de objetos começa a ficar complexa, como em APIs, frameworks, integrações ou objetos com regras de construção.                           |
+| **[Singleton](./singleton/README-SINGLETON.md)** | Quando faz sentido ter uma única instância compartilhada, como pool de conexão, configuração global ou cache. Use com cautela por causa de estado global. |
+| **[Decorator](./decorator/README-DECORATOR.md)** | Quando você quer adicionar comportamento sem alterar o objeto original, como em middlewares, interceptors, logs, validações ou extensões opcionais.       |
+| **[Strategy](./strategy/README-STRATEGY.md)**    | Quando você precisa trocar algoritmos ou regras em tempo de execução, como validação, ordenação, autenticação, cálculo de frete ou regras de desconto.    |
+| **[Adapter](./adapter/README-ADAPTER.md)**       | Quando você precisa conectar interfaces incompatíveis, como APIs externas, sistemas legados ou migração de bibliotecas.                                   |
+
+## Referências e Inspirações
+
+Este projeto foi criado usando como referência e inspiração conteúdos que explicam Design Patterns de forma prática e acessível:
+
+- [Os 6 Design Patterns mais usados - Arthur Takeda](https://youtu.be/G-O90vR7SCU?si=flqiD-JxO6Tk7mPf)
+- [Refactoring Guru - Design Patterns](https://refactoring.guru/pt-br/design-patterns)
 
 ## 🤝 Contribuições
 
