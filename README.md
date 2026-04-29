@@ -6,6 +6,8 @@ Um repositório com implementações práticas e exemplos claros dos principais 
 
 Este repositório tem como objetivo fornecer exemplos de implementação de diversos padrões de design, demonstrando situações onde podem ser aplicados. Os exemplos são organizados de forma simples, facilitando o aprendizado e a consulta rápida para desenvolvedores de todos os níveis.
 
+> Os exemplos deste projeto têm foco didático. A intenção não é representar uma arquitetura robusta de produção, mas explicar o conceito de cada padrão de forma simples para que fique mais fácil aplicar a ideia em cenários reais.
+
 ---
 
 ## 🧩 Padrões Incluídos
@@ -15,29 +17,30 @@ Este repositório tem como objetivo fornecer exemplos de implementação de dive
 ### Padrões Criacionais
 
 - **[Singleton](./singleton/README-SINGLETON.md)**: Implementação que garante a existência de apenas uma instância de uma classe
+- **[Factory](./factory/README-FACTORY.md)**: Centralização da criação de objetos em uma fábrica
 
 <!--
-- **Factory Method**: Criação de objetos sem especificar a classe exata
 - **Abstract Factory**: Criação de famílias de objetos relacionados
 - **Builder**: Construção de objetos complexos passo a passo
 - **Prototype**: Criação de novos objetos a partir da clonagem de objetos existentes -->
 
 ### Padrões Estruturais
 
-- **[Adapter](./adapter/README-ADAPTER.md)**: Separação de abstração e implementação
+- **[Adapter](./adapter/README-ADAPTER.md)**: Conexão entre interfaces incompatíveis
+- **[Decorator](./decorator/README-DECORATOR.md)**: Adição dinâmica de responsabilidades a um objeto
 
 <!-- - **Bridge**: Separação de abstração e implementação
 - **Composite**: Composição de objetos em estruturas de árvore
-- **Decorator**: Adição de responsabilidades a objetos dinamicamente
 - **Facade**: Interface simplificada para um conjunto de interfaces -->
 
 ### Padrões Comportamentais
 
+- **[Observer](./observer/README-OBSERVER.md)**: Notificação automática de observadores quando um objeto muda
+- **[Strategy](./strategy/README-STRATEGY.md)**: Troca de algoritmos em tempo de execução através de uma interface comum
+
 ---
 
-<!-- - **Strategy**: Definição de uma família de algoritmos intercambiáveis
-- **Observer**: Notificação de mudanças para objetos dependentes
-- **Command**: Encapsulamento de solicitações como objetos
+<!-- - **Command**: Encapsulamento de solicitações como objetos
 - **Iterator**: Acesso sequencial aos elementos de uma coleção
 - **State**: Alteração do comportamento quando o estado interno muda -->
 
