@@ -20,9 +20,15 @@ Quando você viaja do Brasil para a Europa pela primeira vez, você pode ter uma
 
 Nesse diretório, você encontrará um exemplo de implementação do padrão Adapter no diretório **src-with-pattern** e outro exemplo sem a utilização do padrão no diretório **src-without-pattern**.
 
+O exemplo usa duas bibliotecas diferentes para gerar PDF. Com o Adapter, o gerador de relatório depende de um contrato comum, e não diretamente de uma biblioteca específica.
+
 #### Vantagens & Desvantagens
 
 | Prós                                                                                                                                                                                                    | Contras                                                                                                                                                                                                                |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Princípio de responsabilidade única. Você pode separar a conversão de interface ou de dados da lógica primária do negócio do programa.                                                                  | A complexidade geral do código aumenta porque você precisa introduzir um conjunto de novas interfaces e classes. Algumas vezes é mais simples mudar a classe serviço para que ela se adeque com o resto do seu código. |
 | Princípio aberto/fechado. Você pode introduzir novos tipos de adaptadores no programa sem quebrar o código cliente existente, desde que eles trabalhem com os adaptadores através da interface cliente. |                                                                                                                                                                                                                        |
+
+### Minha Opinião
+
+É um padrão muito comum quando trabalhamos com bibliotecas externas, APIs de terceiros ou sistemas legados. Ele ajuda a proteger o restante do código das mudanças e detalhes dessas integrações.

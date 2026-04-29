@@ -7,7 +7,7 @@ export class JSPdfAdapter implements PdfAdapter {
     this.doc = new jsPDF();
   }
 
-  generate(fileName: string, content: string): void {
+  async generate(fileName: string, content: string): Promise<void> {
     // implementar regras e novos parâmetros para montar o pdf
 
     this.doc.text(content, 10, 10);

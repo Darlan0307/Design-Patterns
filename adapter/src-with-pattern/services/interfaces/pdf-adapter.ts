@@ -1,3 +1,3 @@
 export interface PdfAdapter {
-  generate(fileName: string, content: string): void;
+  generate(fileName: string, content: string): Promise<void>;
 }
