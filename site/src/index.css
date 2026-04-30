@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #171512;
+  background: #f7f3eb;
+  font-family:
+    "Aptos",
+    "Segoe UI",
+    "Helvetica Neue",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+pre {
+  overflow-x: auto !important;
+}
+
+.texture {
+  background:
+    linear-gradient(90deg, rgba(23, 21, 18, 0.055) 1px, transparent 1px),
+    linear-gradient(rgba(23, 21, 18, 0.045) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+
+::selection {
+  background: #a65f3e;
+  color: #fffaf0;
+}
+
+@media (max-width: 640px) {
+  .token-line {
+    white-space: pre;
+  }
+}
