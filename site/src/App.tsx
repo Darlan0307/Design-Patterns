@@ -3,6 +3,7 @@ import {
   ArrowRight,
   CheckCircle2,
   GitCompareArrows,
+  GraduationCap,
   Layers,
   Search,
 } from "lucide-react";
@@ -115,6 +116,9 @@ export default function App() {
       referenceText:
         "This project also uses Refactoring Guru as a reference for terminology, structure, and study flow.",
       referenceLink: "Open Refactoring Guru",
+      teachingNoteTitle: "Teaching-first examples",
+      teachingNote:
+        "The examples in this project are focused on learning. The goal is not to represent a robust production architecture, but to explain each pattern in a simple way so the idea becomes easier to apply in real-world scenarios.",
     },
     pt: {
       eyebrow: "Exemplos práticos em TypeScript",
@@ -142,6 +146,9 @@ export default function App() {
       referenceText:
         "Este projeto também usa o Refactoring Guru como referência para terminologia, estrutura e fluxo de estudo.",
       referenceLink: "Abrir Refactoring Guru",
+      teachingNoteTitle: "Exemplos com foco didático",
+      teachingNote:
+        "Os exemplos deste projeto têm foco didático. A intenção não é representar uma arquitetura robusta de produção, mas explicar o conceito de cada padrão de forma simples para que fique mais fácil aplicar a ideia em cenários reais.",
     },
   }[language];
 
@@ -241,6 +248,22 @@ export default function App() {
                 placeholder={labels.search}
                 className="h-12 w-full rounded-full border border-line bg-surface pl-11 pr-4 text-sm text-ink outline-none transition placeholder:text-graphite/45 focus:border-ink"
               />
+            </div>
+          </div>
+
+          <div className="mb-10 rounded-lg border border-line bg-surface p-5 shadow-sm">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-ink text-paper">
+                <GraduationCap size={20} strokeWidth={1.8} />
+              </span>
+              <div>
+                <h3 className="text-lg font-semibold text-ink">
+                  {labels.teachingNoteTitle}
+                </h3>
+                <p className="mt-2 max-w-5xl text-base leading-7 text-graphite/78">
+                  {labels.teachingNote}
+                </p>
+              </div>
             </div>
           </div>
 

@@ -44,6 +44,21 @@ code {
   white-space: pre;
 }
 
+.clamp-2,
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.clamp-2 {
+  -webkit-line-clamp: 2;
+}
+
+.clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
 .texture {
   background:
     linear-gradient(90deg, rgba(23, 21, 18, 0.055) 1px, transparent 1px),

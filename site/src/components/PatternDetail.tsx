@@ -32,8 +32,6 @@ export function PatternDetail({
       comparison: "Example",
       opinion: "My Opinion",
       readme: "View README",
-      withoutCode: "View code without pattern",
-      withCode: "View code with pattern",
     },
     pt: {
       back: "Voltar para padrões",
@@ -46,8 +44,6 @@ export function PatternDetail({
       comparison: "Exemplo",
       opinion: "Minha Opinião",
       readme: "Ver README",
-      withoutCode: "Ver código sem pattern",
-      withCode: "Ver código com pattern",
     },
   }[language];
 
@@ -59,14 +55,6 @@ export function PatternDetail({
     {
       label: labels.readme,
       href: `${githubBase}/blob/main/${pattern.id}/${readmeFile}`,
-    },
-    {
-      label: labels.withoutCode,
-      href: `${githubBase}/tree/main/${pattern.id}/src-without-pattern`,
-    },
-    {
-      label: labels.withCode,
-      href: `${githubBase}/tree/main/${pattern.id}/src-with-pattern`,
     },
   ];
 
