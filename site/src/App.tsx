@@ -321,11 +321,13 @@ function HeroPreview({
 }) {
   const groupedPatterns = categories.map((category) => ({
     category,
-    items: patterns.filter((pattern) => pattern.content[language].category === category),
+    items: patterns.filter(
+      (pattern) => pattern.content[language].category === category,
+    ),
   }));
 
   return (
-    <div className="relative min-w-0">
+    <div className="relative hidden min-w-0 sm:block">
       <div
         className="absolute -inset-4 rounded-[2rem] bg-clay/10 blur-3xl"
         aria-hidden="true"
