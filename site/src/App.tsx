@@ -3,14 +3,28 @@ import { ArrowRight, Layers, Search } from "lucide-react";
 import { Header } from "./components/Header";
 import { PatternCard } from "./components/PatternCard";
 import { PatternDetail } from "./components/PatternDetail";
+import { Footer } from "./components/Footer";
 import {
   categoryLabels,
   patterns,
   type Category,
   type Language,
+  type TextBlock,
 } from "./data/patterns";
 
 const categories: Category[] = ["creational", "structural", "behavioral"];
+
+function textFromBlocks(blocks: TextBlock[]) {
+  return blocks
+    .map((block) => {
+      if (block.type === "list") {
+        return block.items.join(" ");
+      }
+
+      return block.text;
+    })
+    .join(" ");
+}
 
 function getPatternFromPath() {
   const slug = window.location.pathname.replace(/^\/+|\/+$/g, "");
@@ -44,10 +58,11 @@ export default function App() {
       return [
         content.name,
         content.summary,
-        ...content.problem,
-        ...content.solution,
-        ...content.analogy,
-        content.whenToUse,
+        textFromBlocks(content.problem),
+        textFromBlocks(content.solution),
+        textFromBlocks(content.analogy),
+        textFromBlocks(content.whenToUse),
+        textFromBlocks(content.opinion),
       ]
         .join(" ")
         .toLowerCase()
@@ -85,6 +100,10 @@ export default function App() {
       statLanguages: "languages",
       statFocus: "teaching-first",
       comparison: "Side-by-side code comparison",
+      referenceTitle: "Reference used",
+      referenceText:
+        "This project also uses Refactoring Guru as a reference for terminology, structure, and study flow.",
+      referenceLink: "Open Refactoring Guru",
     },
     pt: {
       eyebrow: "Exemplos práticos em TypeScript",
@@ -102,7 +121,11 @@ export default function App() {
       statPatterns: "padrões",
       statLanguages: "idiomas",
       statFocus: "foco didático",
-      comparison: "Comparação de código lado a lado",
+      comparison: "Workspace de código",
+      referenceTitle: "Referência utilizada",
+      referenceText:
+        "Este projeto também usa o Refactoring Guru como referência para terminologia, estrutura e fluxo de estudo.",
+      referenceLink: "Abrir Refactoring Guru",
     },
   }[language];
 
@@ -115,6 +138,7 @@ export default function App() {
           onHome={goHome}
         />
         <PatternDetail pattern={pattern} language={language} onBack={goHome} />
+        <Footer language={language} />
       </div>
     );
   }
@@ -240,6 +264,7 @@ export default function App() {
           </section>
         </section>
       </main>
+      <Footer language={language} />
     </div>
   );
 }

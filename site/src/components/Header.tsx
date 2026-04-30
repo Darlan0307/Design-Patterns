@@ -1,4 +1,4 @@
-import { BookOpen } from "lucide-react";
+import { BookOpen, Github, Linkedin } from "lucide-react";
 import type { Language } from "../data/patterns";
 import { LanguageToggle } from "./LanguageToggle";
 
@@ -41,7 +41,25 @@ export function Header({ language, onLanguageChange, onHome }: HeaderProps) {
           </span>
         </button>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href="https://github.com/Darlan0307/Design-Patterns"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            className="grid h-10 w-10 place-items-center rounded-full border border-line bg-surface text-ink transition hover:border-ink"
+          >
+            <Github size={18} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/darlan-martins-8a7956259/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="grid h-10 w-10 place-items-center rounded-full border border-line bg-surface text-ink transition hover:border-ink"
+          >
+            <Linkedin size={18} />
+          </a>
           <LanguageToggle language={language} onChange={onLanguageChange} />
         </div>
       </div>
