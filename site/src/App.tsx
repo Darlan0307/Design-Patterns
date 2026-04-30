@@ -20,7 +20,7 @@ function getPatternFromPath() {
 export default function App() {
   const [language, setLanguage] = useState<Language>("pt");
   const [selectedPattern, setSelectedPattern] = useState<string>(() =>
-    getPatternFromPath()
+    getPatternFromPath(),
   );
   const [query, setQuery] = useState("");
 
@@ -80,7 +80,7 @@ export default function App() {
         "This pattern is not here yet. More patterns will be added to the guide soon.",
       upcomingTitle: "More patterns are coming",
       upcomingText:
-        "This guide starts with the most common patterns and will keep growing with new examples, comparisons, and practical notes.",
+        "This guide starts with the most common patterns and will keep growing with new examples and comparisons.",
       statPatterns: "patterns",
       statLanguages: "languages",
       statFocus: "teaching-first",
@@ -98,7 +98,7 @@ export default function App() {
         "Esse padrão ainda não está por aqui. Novos padrões serão adicionados ao guia em breve.",
       upcomingTitle: "Mais padrões estão a caminho",
       upcomingText:
-        "Este guia começa pelos padrões mais usados e continuará crescendo com novos exemplos, comparações e observações práticas.",
+        "Este guia começa pelos padrões mais usados e continuará crescendo com novos exemplos e comparações.",
       statPatterns: "padrões",
       statLanguages: "idiomas",
       statFocus: "foco didático",
@@ -109,7 +109,11 @@ export default function App() {
   if (pattern) {
     return (
       <div className="min-h-screen bg-paper text-ink">
-        <Header language={language} onLanguageChange={setLanguage} onHome={goHome} />
+        <Header
+          language={language}
+          onLanguageChange={setLanguage}
+          onHome={goHome}
+        />
         <PatternDetail pattern={pattern} language={language} onBack={goHome} />
       </div>
     );
@@ -117,12 +121,19 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-paper text-ink">
-      <Header language={language} onLanguageChange={setLanguage} onHome={goHome} />
+      <Header
+        language={language}
+        onLanguageChange={setLanguage}
+        onHome={goHome}
+      />
 
       <main>
         <section className="relative overflow-hidden border-b border-line">
-          <div className="texture absolute inset-0 opacity-60" aria-hidden="true" />
-          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
+          <div
+            className="texture absolute inset-0 opacity-60"
+            aria-hidden="true"
+          />
+          <div className="relative mx-auto grid max-w-[96rem] gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-20 2xl:px-10">
             <div className="max-w-3xl">
               <span className="mb-5 inline-flex rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-graphite/70">
                 {labels.eyebrow}
@@ -145,21 +156,29 @@ export default function App() {
             </div>
 
             <div className="grid content-end gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              <Metric value={patterns.length.toString()} label={labels.statPatterns} />
+              <Metric
+                value={patterns.length.toString()}
+                label={labels.statPatterns}
+              />
               <Metric value="2" label={labels.statLanguages} />
               <Metric value="1:1" label={labels.comparison} />
             </div>
           </div>
         </section>
 
-        <section id="patterns" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <section
+          id="patterns"
+          className="mx-auto max-w-[96rem] px-4 py-12 sm:px-6 lg:px-8 2xl:px-10"
+        >
           <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <span className="mb-3 inline-flex items-center gap-2 text-sm font-medium text-graphite/70">
                 <Layers size={16} />
                 {labels.categories}
               </span>
-              <h2 className="text-3xl font-semibold text-ink">{labels.browse}</h2>
+              <h2 className="text-3xl font-semibold text-ink">
+                {labels.browse}
+              </h2>
             </div>
             <div className="relative min-w-0 sm:w-96">
               <Search
@@ -178,7 +197,7 @@ export default function App() {
           <div className="space-y-10">
             {categories.map((category) => {
               const items = filteredPatterns.filter(
-                (item) => item.content[language].category === category
+                (item) => item.content[language].category === category,
               );
 
               if (items.length === 0) {
@@ -190,7 +209,7 @@ export default function App() {
                   <h3 className="mb-4 border-b border-line pb-3 text-sm font-semibold uppercase tracking-[0.18em] text-graphite/65">
                     {categoryLabels[language][category]}
                   </h3>
-                  <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                  <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
                     {items.map((item) => (
                       <PatternCard
                         key={item.id}
@@ -212,7 +231,9 @@ export default function App() {
           )}
 
           <section className="mt-12 rounded-lg border border-dashed border-line bg-surface/70 p-6">
-            <h3 className="text-xl font-semibold text-ink">{labels.upcomingTitle}</h3>
+            <h3 className="text-xl font-semibold text-ink">
+              {labels.upcomingTitle}
+            </h3>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-graphite/75">
               {labels.upcomingText}
             </p>

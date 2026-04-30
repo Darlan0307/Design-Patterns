@@ -45,7 +45,7 @@ export function PatternDetail({ pattern, language, onBack }: PatternDetailProps)
   ];
 
   return (
-    <main className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[15rem_1fr] lg:px-8">
+    <main className="mx-auto grid max-w-[96rem] gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[15rem_1fr] lg:px-8 2xl:px-10">
       <aside className="hidden lg:block">
         <div className="sticky top-24 space-y-4">
           <button
