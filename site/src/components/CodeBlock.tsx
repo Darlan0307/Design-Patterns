@@ -10,7 +10,7 @@ SyntaxHighlighter.registerLanguage("typescript", typescript);
 
 export function CodeBlock({ code }: CodeBlockProps) {
   return (
-    <div className="overflow-hidden rounded-lg border border-line bg-[#fbf7ee]">
+    <div className="max-w-full overflow-hidden rounded-lg border border-line bg-[#fbf7ee]">
       <SyntaxHighlighter
         language="typescript"
         style={oneLight}

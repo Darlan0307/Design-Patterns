@@ -7,10 +7,10 @@ type LanguageToggleProps = {
 
 export function LanguageToggle({ language, onChange }: LanguageToggleProps) {
   return (
-    <div className="inline-grid grid-cols-2 rounded-full border border-line bg-surface p-1 text-sm shadow-sm">
+    <div className="inline-grid shrink-0 grid-cols-2 rounded-full border border-line bg-surface p-1 text-xs shadow-sm sm:text-sm">
       <button
         type="button"
-        className={`rounded-full px-3 py-1.5 transition ${
+        className={`rounded-full px-2 py-1.5 transition sm:px-3 ${
           language === "pt"
             ? "bg-ink text-paper"
             : "text-graphite hover:bg-paper"
@@ -24,7 +24,7 @@ export function LanguageToggle({ language, onChange }: LanguageToggleProps) {
       </button>
       <button
         type="button"
-        className={`rounded-full px-3 py-1.5 transition ${
+        className={`rounded-full px-2 py-1.5 transition sm:px-3 ${
           language === "en"
             ? "bg-ink text-paper"
             : "text-graphite hover:bg-paper"
@@ -44,7 +44,7 @@ function BrazilFlag() {
   return (
     <svg
       viewBox="0 0 28 20"
-      className="mr-1.5 inline-block h-3.5 w-5 rounded-[2px] align-[-2px] shadow-sm"
+      className="mr-1 inline-block h-3 w-[18px] rounded-[2px] align-[-2px] shadow-sm sm:mr-1.5 sm:h-3.5 sm:w-5"
       aria-hidden="true"
     >
       <rect width="28" height="20" fill="#009B3A" />
@@ -64,7 +64,7 @@ function UnitedStatesFlag() {
   return (
     <svg
       viewBox="0 0 28 20"
-      className="mr-1.5 inline-block h-3.5 w-5 rounded-[2px] align-[-2px] shadow-sm"
+      className="mr-1 inline-block h-3 w-[18px] rounded-[2px] align-[-2px] shadow-sm sm:mr-1.5 sm:h-3.5 sm:w-5"
       aria-hidden="true"
     >
       <rect width="28" height="20" fill="#B22234" />

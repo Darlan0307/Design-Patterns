@@ -22,16 +22,16 @@ export function Header({ language, onLanguageChange, onHome }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line/80 bg-paper/88 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-[96rem] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 2xl:px-10">
+      <div className="mx-auto flex max-w-[96rem] items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-6 lg:px-8 2xl:px-10">
         <button
           type="button"
           onClick={onHome}
-          className="flex min-w-0 items-center gap-3 text-left"
+          className="flex min-w-0 items-center gap-2 text-left sm:gap-3"
         >
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-ink text-paper">
-            <BookOpen size={20} strokeWidth={1.8} />
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-ink text-paper sm:h-10 sm:w-10">
+            <BookOpen size={18} strokeWidth={1.8} />
           </span>
-          <span className="min-w-0">
+          <span className="hidden min-w-0 min-[420px]:block">
             <span className="block truncate text-base font-semibold text-ink">
               {labels.title}
             </span>
@@ -41,13 +41,13 @@ export function Header({ language, onLanguageChange, onHome }: HeaderProps) {
           </span>
         </button>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex min-w-0 items-center gap-1.5 sm:gap-3">
           <a
             href="https://github.com/Darlan0307/Design-Patterns"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="grid h-10 w-10 place-items-center rounded-full border border-line bg-surface text-ink transition hover:border-ink"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line bg-surface text-ink transition hover:border-ink sm:h-10 sm:w-10"
           >
             <Github size={18} />
           </a>
@@ -56,7 +56,7 @@ export function Header({ language, onLanguageChange, onHome }: HeaderProps) {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="grid h-10 w-10 place-items-center rounded-full border border-line bg-surface text-ink transition hover:border-ink"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line bg-surface text-ink transition hover:border-ink sm:h-10 sm:w-10"
           >
             <Linkedin size={18} />
           </a>
