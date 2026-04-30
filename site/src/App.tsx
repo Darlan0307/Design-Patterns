@@ -1,5 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, Layers, Search } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  GitCompareArrows,
+  Layers,
+  Search,
+} from "lucide-react";
 import { Header } from "./components/Header";
 import { PatternCard } from "./components/PatternCard";
 import { PatternDetail } from "./components/PatternDetail";
@@ -87,7 +93,7 @@ export default function App() {
       eyebrow: "Practical TypeScript examples",
       title: "Learn design patterns by comparing code.",
       intro:
-        "A bilingual study guide focused on clear concepts, compact examples, and direct comparison between implementations with and without each pattern.",
+        "A bilingual study guide for learning the most used patterns with direct explanations, simple analogies, and TypeScript examples that compare the before and after of each solution.",
       browse: "Browse patterns",
       search: "Search patterns",
       categories: "Pattern categories",
@@ -99,7 +105,12 @@ export default function App() {
       statPatterns: "patterns",
       statLanguages: "languages",
       statFocus: "teaching-first",
-      comparison: "Side-by-side code comparison",
+      comparison: "code comparison",
+      previewTitle: "Study map",
+      withoutPattern: "Without pattern",
+      withPattern: "With pattern",
+      beforeLine: "Rules spread through conditionals",
+      afterLine: "Behavior isolated behind a clear contract",
       referenceTitle: "Reference used",
       referenceText:
         "This project also uses Refactoring Guru as a reference for terminology, structure, and study flow.",
@@ -109,7 +120,7 @@ export default function App() {
       eyebrow: "Exemplos práticos em TypeScript",
       title: "Aprenda design patterns comparando código.",
       intro:
-        "Um guia de estudo bilingue focado em conceitos claros, exemplos compactos e comparação direta entre implementações com e sem cada padrão.",
+        "Um guia bilíngue para estudar os padrões mais usados com explicações diretas, analogias simples e exemplos em TypeScript comparando o antes e o depois de cada solução.",
       browse: "Explorar padrões",
       search: "Buscar padrões",
       categories: "Categorias de padrões",
@@ -122,6 +133,11 @@ export default function App() {
       statLanguages: "idiomas",
       statFocus: "foco didático",
       comparison: "Workspace de código",
+      previewTitle: "Mapa de estudo",
+      withoutPattern: "Sem pattern",
+      withPattern: "Com pattern",
+      beforeLine: "Regras espalhadas em condicionais",
+      afterLine: "Comportamento isolado por um contrato claro",
       referenceTitle: "Referência utilizada",
       referenceText:
         "Este projeto também usa o Refactoring Guru como referência para terminologia, estrutura e fluxo de estudo.",
@@ -157,18 +173,18 @@ export default function App() {
             className="texture absolute inset-0 opacity-60"
             aria-hidden="true"
           />
-          <div className="relative mx-auto grid max-w-[96rem] gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-20 2xl:px-10">
-            <div className="max-w-3xl">
+          <div className="relative mx-auto grid max-w-[96rem] items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-20 2xl:px-10">
+            <div className="max-w-4xl">
               <span className="mb-5 inline-flex rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-graphite/70">
                 {labels.eyebrow}
               </span>
               <h1 className="max-w-4xl text-4xl font-semibold tracking-normal text-ink sm:text-5xl lg:text-6xl">
                 {labels.title}
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-graphite/78">
+              <p className="mt-5 max-w-3xl text-lg leading-8 text-graphite/78">
                 {labels.intro}
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href="#patterns"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-medium text-paper transition hover:bg-graphite"
@@ -177,16 +193,26 @@ export default function App() {
                   <ArrowRight size={16} />
                 </a>
               </div>
+              <div className="mt-8 grid max-w-2xl divide-y divide-line border-y border-line bg-surface/55 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+                <HeroStat
+                  value={patterns.length.toString()}
+                  label={labels.statPatterns}
+                />
+                <HeroStat value="2" label={labels.statLanguages} />
+                <HeroStat value="1:1" label={labels.comparison} />
+              </div>
             </div>
 
-            <div className="grid content-end gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              <Metric
-                value={patterns.length.toString()}
-                label={labels.statPatterns}
-              />
-              <Metric value="2" label={labels.statLanguages} />
-              <Metric value="1:1" label={labels.comparison} />
-            </div>
+            <HeroPreview
+              language={language}
+              labels={{
+                previewTitle: labels.previewTitle,
+                withoutPattern: labels.withoutPattern,
+                withPattern: labels.withPattern,
+                beforeLine: labels.beforeLine,
+                afterLine: labels.afterLine,
+              }}
+            />
           </div>
         </section>
 
@@ -269,11 +295,126 @@ export default function App() {
   );
 }
 
-function Metric({ value, label }: { value: string; label: string }) {
+function HeroStat({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-lg border border-line bg-surface/90 p-5 shadow-sm backdrop-blur">
-      <div className="text-3xl font-semibold text-ink">{value}</div>
-      <div className="mt-1 text-sm leading-5 text-graphite/70">{label}</div>
+    <div className="min-w-0 px-3 py-4 sm:px-5">
+      <div className="text-2xl font-semibold text-ink sm:text-3xl">{value}</div>
+      <div className="mt-1 text-xs leading-5 text-graphite/70 sm:text-sm">
+        {label}
+      </div>
+    </div>
+  );
+}
+
+function HeroPreview({
+  language,
+  labels,
+}: {
+  language: Language;
+  labels: {
+    previewTitle: string;
+    withoutPattern: string;
+    withPattern: string;
+    beforeLine: string;
+    afterLine: string;
+  };
+}) {
+  const groupedPatterns = categories.map((category) => ({
+    category,
+    items: patterns.filter((pattern) => pattern.content[language].category === category),
+  }));
+
+  return (
+    <div className="relative min-w-0">
+      <div
+        className="absolute -inset-4 rounded-[2rem] bg-clay/10 blur-3xl"
+        aria-hidden="true"
+      />
+      <div className="relative overflow-hidden rounded-2xl border border-line bg-surface/92 shadow-quiet backdrop-blur">
+        <div className="flex items-center justify-between border-b border-line px-4 py-3">
+          <div className="flex items-center gap-2 text-sm font-semibold text-ink">
+            <GitCompareArrows size={17} />
+            {labels.previewTitle}
+          </div>
+          <div className="flex gap-1.5" aria-hidden="true">
+            <span className="h-2.5 w-2.5 rounded-full bg-clay" />
+            <span className="h-2.5 w-2.5 rounded-full bg-moss" />
+            <span className="h-2.5 w-2.5 rounded-full bg-ocean" />
+          </div>
+        </div>
+
+        <div className="grid min-w-0 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="border-b border-line p-4 lg:border-b-0 lg:border-r">
+            <div className="space-y-4">
+              {groupedPatterns.map(({ category, items }) => (
+                <div key={category}>
+                  <div className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-graphite/55">
+                    {categoryLabels[language][category]}
+                  </div>
+                  <div className="space-y-2">
+                    {items.map((pattern) => (
+                      <div
+                        key={pattern.id}
+                        className="flex min-w-0 items-center gap-2 border-l-2 border-line py-1 pl-3"
+                      >
+                        <CheckCircle2
+                          size={15}
+                          className="shrink-0 text-moss"
+                          strokeWidth={1.8}
+                        />
+                        <span className="truncate text-sm font-medium text-ink">
+                          {pattern.content[language].name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="min-w-0 p-4">
+            <div className="grid min-w-0 gap-4 sm:grid-cols-2">
+              <CodePreview
+                title={labels.withoutPattern}
+                description={labels.beforeLine}
+                tone="clay"
+                code={`if (type === "email") {\n  sendEmail(message);\n}\n\nif (type === "sms") {\n  sendSms(message);\n}`}
+              />
+              <CodePreview
+                title={labels.withPattern}
+                description={labels.afterLine}
+                tone="moss"
+                code={`const notifier = factory.create(type);\n\nnotifier.send(message);`}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CodePreview({
+  title,
+  description,
+  tone,
+  code,
+}: {
+  title: string;
+  description: string;
+  tone: "clay" | "moss";
+  code: string;
+}) {
+  const toneClass = tone === "clay" ? "text-clay" : "text-moss";
+
+  return (
+    <div className="min-w-0">
+      <div className={`text-sm font-semibold ${toneClass}`}>{title}</div>
+      <p className="mt-1 text-xs leading-5 text-graphite/65">{description}</p>
+      <pre className="mt-3 max-w-full overflow-x-auto rounded-lg border border-line bg-ink p-3 text-[11px] leading-5 text-paper shadow-inner">
+        <code>{code}</code>
+      </pre>
     </div>
   );
 }

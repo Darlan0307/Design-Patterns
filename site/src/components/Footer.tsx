@@ -19,7 +19,17 @@ export function Footer({ language }: FooterProps) {
   return (
     <footer className="mt-12 border-t border-line bg-paper">
       <div className="mx-auto flex max-w-[96rem] flex-col gap-3 px-4 py-6 text-sm text-graphite/72 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8 2xl:px-10">
-        <span>© {new Date().getFullYear()} Darlan Martins</span>
+        <span>
+          © {new Date().getFullYear()}{" "}
+          <a
+            href="https://www.darlanmartins.com.br/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-ink transition hover:text-clay underline"
+          >
+            Darlan Martins
+          </a>
+        </span>
         <a
           href={
             language === "pt"
@@ -28,7 +38,7 @@ export function Footer({ language }: FooterProps) {
           }
           target="_blank"
           rel="noreferrer"
-          className="font-medium text-ink transition hover:text-clay"
+          className="font-medium text-ink transition hover:text-clay underline"
         >
           {labels.reference}: Refactoring Guru
         </a>

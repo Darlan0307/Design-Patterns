@@ -43,6 +43,19 @@ export function Header({ language, onLanguageChange, onHome }: HeaderProps) {
 
         <div className="flex min-w-0 items-center gap-1.5 sm:gap-3">
           <a
+            href="https://www.darlanmartins.com.br/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Portfólio Darlan Martins"
+            className="grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-full border border-line bg-surface transition hover:border-ink sm:h-10 sm:w-10"
+          >
+            <img
+              src="https://www.darlanmartins.com.br/perfil.png"
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          </a>
+          <a
             href="https://github.com/Darlan0307/Design-Patterns"
             target="_blank"
             rel="noreferrer"
