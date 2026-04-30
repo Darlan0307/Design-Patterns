@@ -1,37 +1,39 @@
-# Observer (Observador)
+# Observer
 
-> (Padrão Comportamental)
+🇧🇷 [Veja em Português](./README-OBSERVER.pt-BR.md)
 
-### 😠 Problema
+> (Behavioral Pattern)
 
-Imagine que você tem um objeto importante no sistema, como um pedido, e várias partes precisam saber quando ele muda de status: e-mail, SMS, push, log, painel administrativo e assim por diante.
+### 😠 Problem
 
-Sem cuidado, a classe principal começa a conhecer todos esses serviços diretamente. Cada novo canal de notificação exige uma alteração nela, mesmo que a regra principal do pedido não tenha mudado.
+Imagine you have an important object in the system, such as an order, and several parts need to know when its status changes: email, SMS, push notifications, logs, admin dashboards, and so on.
 
-### 😁 Solução
+Without care, the main class starts to know all these services directly. Every new notification channel requires a change in that class, even when the main order rule has not changed.
 
-O Observer cria uma relação entre um objeto central, chamado de **subject**, e uma lista de objetos interessados, chamados de **observers**.
+### 😁 Solution
 
-Quando o estado do subject muda, ele notifica automaticamente todos os observadores cadastrados. Assim, o subject não precisa conhecer os detalhes de cada reação.
+Observer creates a relationship between a central object, called the **subject**, and a list of interested objects, called **observers**.
 
-### 🤔 Analogia com o mundo real
+When the subject state changes, it automatically notifies all registered observers. This way, the subject does not need to know the details of each reaction.
 
-Pense em um canal de vídeos. Quando um novo vídeo é publicado, todos os inscritos recebem uma notificação. O canal não precisa mandar uma mensagem manual para cada pessoa; ele apenas publica o conteúdo e a plataforma avisa quem está inscrito.
+### 🤔 Real-world Analogy
 
-### 📝 Exemplo
+Think about a video channel. When a new video is published, all subscribers receive a notification. The channel does not need to manually message each person; it publishes the content and the platform notifies whoever subscribed.
 
-Nesse diretório, você encontrará um exemplo de implementação do padrão Observer no diretório **src-with-pattern** e outro exemplo sem a utilização do padrão no diretório **src-without-pattern**.
+### 📝 Example
 
-O exemplo usa um pedido que muda de status e precisa notificar canais como e-mail e SMS.
+In this directory, you will find an Observer implementation example in **src-with-pattern** and another example without using the pattern in **src-without-pattern**.
 
-#### Vantagens & Desvantagens
+The example uses an order that changes status and needs to notify channels such as email and SMS.
 
-| Prós                                                                                         | Contras                                                                                                      |
-| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Reduz o acoplamento entre o objeto principal e os objetos que reagem às mudanças.             | Se existirem muitos observadores, pode ficar mais difícil entender a ordem e o impacto das notificações.      |
-| Facilita adicionar novas reações sem alterar a classe principal.                              | Notificações automáticas podem esconder efeitos colaterais se o fluxo não estiver bem documentado.            |
-| Ajuda quando várias partes do sistema precisam reagir ao mesmo evento ou mudança de estado.   | Em sistemas grandes, pode ser necessário controlar erros para que um observador não quebre os demais.         |
+#### Advantages & Disadvantages
 
-### Minha Opinião
+| Pros | Cons |
+| ---- | ---- |
+| Reduces coupling between the main object and the objects that react to changes. | If there are many observers, it can become harder to understand notification order and impact. |
+| Makes it easier to add new reactions without changing the main class. | Automatic notifications can hide side effects if the flow is not well documented. |
+| Helps when several parts of the system need to react to the same event or state change. | In large systems, error handling may be needed so one observer does not break the others. |
 
-É um padrão muito útil para eventos, notificações e fluxos onde vários pontos do sistema precisam reagir a uma mudança. Só é importante evitar exageros: se tudo vira evento, o fluxo do sistema pode ficar difícil de acompanhar.
+### My Opinion
+
+It is a very useful pattern for events, notifications, and flows where several points of the system need to react to a change. It is just important not to overuse it: if everything becomes an event, the system flow can become hard to follow.

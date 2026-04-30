@@ -1,34 +1,36 @@
-# Adapter (Adaptador)
+# Adapter
 
-> (Padrão Estrutural)
+🇧🇷 [Veja em Português](./README-ADAPTER.pt-BR.md)
 
-### 😠 Problema
+> (Structural Pattern)
 
-- Você precisa integrar uma classe existente que não é compatível com o padrão de projeto que você está usando.
-- Você quer reutilizar várias subclasses que não possuem algumas funcionalidades comuns e não é possível adicionar essas funcionalidades à superclasse.
-- Você precisa integrar bibliotecas ou componentes de terceiros sem modificar o código fonte original.
+### 😠 Problem
 
-### 😁 Solução
+- You need to integrate an existing class that is not compatible with the design used by your code.
+- You want to reuse several subclasses that do not share some common functionality and cannot add that functionality to the superclass.
+- You need to integrate third-party libraries or components without modifying their original source code.
 
-O Adapter encapsula um objeto de uma classe (o adaptado) e expõe uma interface que é esperada pelos clientes. O Adapter traduz as chamadas de método da interface esperada para chamadas compatíveis com o objeto original.
+### 😁 Solution
 
-### 🤔 Analogia com o mundo real
+Adapter wraps an object from one class, called the adaptee, and exposes an interface expected by clients. The Adapter translates method calls from the expected interface into calls that are compatible with the original object.
 
-Quando você viaja do Brasil para a Europa pela primeira vez, você pode ter uma pequena surpresa quando tenta carregar seu laptop. O plugue e os padrões de tomadas são diferentes em diferentes países. É por isso que seu plugue do Brasil não vai caber em uma tomada da Alemanha. O problema pode ser resolvido usando um adaptador de tomada que tenha o estilo de tomada Brasileira e o plugue no estilo Europeu.
+### 🤔 Real-world Analogy
 
-### 📝 Exemplo
+When you travel from Brazil to Europe for the first time, you may be surprised when trying to charge your laptop. Plugs and outlet standards are different across countries. That is why a Brazilian plug will not fit into a German outlet. The problem can be solved with a plug adapter that has the Brazilian outlet style and the European plug style.
 
-Nesse diretório, você encontrará um exemplo de implementação do padrão Adapter no diretório **src-with-pattern** e outro exemplo sem a utilização do padrão no diretório **src-without-pattern**.
+### 📝 Example
 
-O exemplo usa duas bibliotecas diferentes para gerar PDF. Com o Adapter, o gerador de relatório depende de um contrato comum, e não diretamente de uma biblioteca específica.
+In this directory, you will find an Adapter implementation example in **src-with-pattern** and another example without using the pattern in **src-without-pattern**.
 
-#### Vantagens & Desvantagens
+The example uses two different libraries to generate PDFs. With Adapter, the report generator depends on a common contract instead of depending directly on a specific library.
 
-| Prós                                                                                                                                                                                                    | Contras                                                                                                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Princípio de responsabilidade única. Você pode separar a conversão de interface ou de dados da lógica primária do negócio do programa.                                                                  | A complexidade geral do código aumenta porque você precisa introduzir um conjunto de novas interfaces e classes. Algumas vezes é mais simples mudar a classe serviço para que ela se adeque com o resto do seu código. |
-| Princípio aberto/fechado. Você pode introduzir novos tipos de adaptadores no programa sem quebrar o código cliente existente, desde que eles trabalhem com os adaptadores através da interface cliente. |                                                                                                                                                                                                                        |
+#### Advantages & Disadvantages
 
-### Minha Opinião
+| Pros | Cons |
+| ---- | ---- |
+| Single responsibility principle. You can separate interface or data conversion from the main business logic of the program. | The overall code complexity increases because you need to introduce a new set of interfaces and classes. Sometimes it is simpler to change the service class so it fits the rest of your code. |
+| Open/closed principle. You can introduce new types of adapters without breaking existing client code, as long as clients work through the expected interface. | |
 
-É um padrão muito comum quando trabalhamos com bibliotecas externas, APIs de terceiros ou sistemas legados. Ele ajuda a proteger o restante do código das mudanças e detalhes dessas integrações.
+### My Opinion
+
+It is a very common pattern when working with external libraries, third-party APIs, or legacy systems. It helps protect the rest of the code from the changes and details of those integrations.

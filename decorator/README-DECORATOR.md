@@ -1,37 +1,39 @@
-# Decorator (Decorador)
+# Decorator
 
-> (Padrão Estrutural)
+🇧🇷 [Veja em Português](./README-DECORATOR.pt-BR.md)
 
-### 😠 Problema
+> (Structural Pattern)
 
-Imagine que você tem um objeto simples, como um café, e quer adicionar novas responsabilidades a ele: leite, chocolate, chantilly, desconto, taxa extra e assim por diante.
+### 😠 Problem
 
-Uma solução comum é colocar várias condicionais dentro da classe original ou criar muitas subclasses para cada combinação. Isso cresce rápido e deixa o código difícil de manter.
+Imagine you have a simple object, such as a coffee, and you want to add new responsibilities to it: milk, chocolate, whipped cream, discount, extra fee, and so on.
 
-### 😁 Solução
+A common solution is to put several conditionals inside the original class or create many subclasses for each combination. This grows quickly and makes the code hard to maintain.
 
-O Decorator envolve um objeto com outro objeto que possui a mesma interface.
+### 😁 Solution
 
-Cada decorator adiciona um comportamento específico e repassa o restante para o objeto original. Dessa forma, você consegue combinar comportamentos em tempo de execução sem modificar a classe base.
+Decorator wraps an object with another object that has the same interface.
 
-### 🤔 Analogia com o mundo real
+Each decorator adds a specific behavior and forwards the rest to the original object. This lets you combine behaviors at runtime without modifying the base class.
 
-Pense em uma roupa. Você pode usar uma camiseta e depois adicionar uma jaqueta, um cachecol ou um casaco. Cada camada adiciona algo novo, mas a pessoa continua sendo a mesma.
+### 🤔 Real-world Analogy
 
-### 📝 Exemplo
+Think about clothing. You can wear a T-shirt and then add a jacket, a scarf, or a coat. Each layer adds something new, but the person remains the same.
 
-Nesse diretório, você encontrará um exemplo de implementação do padrão Decorator no diretório **src-with-pattern** e outro exemplo sem a utilização do padrão no diretório **src-without-pattern**.
+### 📝 Example
 
-O exemplo usa um café simples e adiciona leite e chocolate como decorators.
+In this directory, you will find a Decorator implementation example in **src-with-pattern** and another example without using the pattern in **src-without-pattern**.
 
-#### Vantagens & Desvantagens
+The example uses a simple coffee and adds milk and chocolate as decorators.
 
-| Prós                                                                                         | Contras                                                                                         |
-| -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Adiciona responsabilidades sem alterar a classe original.                                     | Muitas camadas de decorators podem dificultar a leitura do fluxo.                                |
-| Permite combinar comportamentos de forma flexível em tempo de execução.                       | Pode ser mais complexo do que uma solução direta quando existem poucas variações.                 |
-| Evita explosão de subclasses para representar combinações de comportamentos.                   | A ordem dos decorators pode importar em alguns cenários e precisa ser bem entendida.              |
+#### Advantages & Disadvantages
 
-### Minha Opinião
+| Pros | Cons |
+| ---- | ---- |
+| Adds responsibilities without changing the original class. | Too many decorator layers can make the flow harder to read. |
+| Allows behaviors to be combined flexibly at runtime. | It can be more complex than a direct solution when there are only a few variations. |
+| Avoids a subclass explosion to represent behavior combinations. | The order of decorators can matter in some scenarios and must be well understood. |
 
-É muito bom quando você tem comportamentos opcionais e combináveis. Só precisa ser usado com cuidado para não transformar uma criação simples em uma cadeia difícil de ler.
+### My Opinion
+
+It is very useful when you have optional and combinable behaviors. It just needs to be used carefully so a simple object creation does not become a chain that is hard to read.

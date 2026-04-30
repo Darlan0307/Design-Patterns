@@ -1,81 +1,84 @@
-# Design Patterns em Prática
+# Design Patterns in Practice
 
-Um repositório com implementações práticas e exemplos claros dos principais padrões de design.
+🇧🇷 [Veja em Português](./README.pt-BR.md)
 
-## 📋 Sobre o Projeto
+A repository with practical implementations and clear examples of the main design patterns in object-oriented programming.
 
-Este repositório tem como objetivo fornecer exemplos de implementação de diversos padrões de design, demonstrando situações onde podem ser aplicados. Os exemplos são organizados de forma simples, facilitando o aprendizado e a consulta rápida para desenvolvedores de todos os níveis.
+## 📋 About the Project
 
-> Os exemplos deste projeto têm foco didático. A intenção não é representar uma arquitetura robusta de produção, mas explicar o conceito de cada padrão de forma simples para que fique mais fácil aplicar a ideia em cenários reais.
+This repository provides implementation examples for different design patterns, showing situations where they can be applied. The examples are organized in a simple way, making learning and quick reference easier for developers at different experience levels.
+
+> The examples in this project are focused on teaching. The goal is not to represent a robust production architecture, but to explain each pattern in a simple way so the idea becomes easier to apply in real scenarios.
 
 ---
 
-## 🧩 Padrões Incluídos
+## 🧩 Included Patterns
 
-> Em desenvolvimento
+> In development
 
-### Padrões Criacionais
+### Creational Patterns
 
-- **[Singleton](./singleton/README-SINGLETON.md)**: Implementação que garante a existência de apenas uma instância de uma classe
-- **[Factory](./factory/README-FACTORY.md)**: Centralização da criação de objetos em uma fábrica
+- **[Singleton](./singleton/README-SINGLETON.md)**: Ensures that a class has only one instance
+- **[Factory](./factory/README-FACTORY.md)**: Centralizes object creation in a factory
 
 <!--
-- **Abstract Factory**: Criação de famílias de objetos relacionados
-- **Builder**: Construção de objetos complexos passo a passo
-- **Prototype**: Criação de novos objetos a partir da clonagem de objetos existentes -->
+- **Abstract Factory**: Creates families of related objects
+- **Builder**: Builds complex objects step by step
+- **Prototype**: Creates new objects by cloning existing ones -->
 
-### Padrões Estruturais
+### Structural Patterns
 
-- **[Adapter](./adapter/README-ADAPTER.md)**: Conexão entre interfaces incompatíveis
-- **[Decorator](./decorator/README-DECORATOR.md)**: Adição dinâmica de responsabilidades a um objeto
+- **[Adapter](./adapter/README-ADAPTER.md)**: Connects incompatible interfaces
+- **[Decorator](./decorator/README-DECORATOR.md)**: Adds responsibilities to an object dynamically
 
-<!-- - **Bridge**: Separação de abstração e implementação
-- **Composite**: Composição de objetos em estruturas de árvore
-- **Facade**: Interface simplificada para um conjunto de interfaces -->
+<!-- - **Bridge**: Separates abstraction from implementation
+- **Composite**: Composes objects into tree structures
+- **Facade**: Provides a simplified interface to a set of interfaces -->
 
-### Padrões Comportamentais
+### Behavioral Patterns
 
-- **[Observer](./observer/README-OBSERVER.md)**: Notificação automática de observadores quando um objeto muda
-- **[Strategy](./strategy/README-STRATEGY.md)**: Troca de algoritmos em tempo de execução através de uma interface comum
+- **[Observer](./observer/README-OBSERVER.md)**: Automatically notifies observers when an object changes
+- **[Strategy](./strategy/README-STRATEGY.md)**: Swaps algorithms at runtime through a common interface
 
 ---
 
-<!-- - **Command**: Encapsulamento de solicitações como objetos
-- **Iterator**: Acesso sequencial aos elementos de uma coleção
-- **State**: Alteração do comportamento quando o estado interno muda -->
+<!-- - **Command**: Encapsulates requests as objects
+- **Iterator**: Accesses collection elements sequentially
+- **State**: Changes behavior when internal state changes -->
 
-## Quando Usar Cada Padrão
+## 🧭 When to Use Each Pattern
 
-| Padrão                                           | Quando usar                                                                                                                                               |
-| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **[Observer](./observer/README-OBSERVER.md)**    | Quando várias partes do sistema precisam reagir a mudanças, como eventos, webhooks, notificações ou mudanças de estado.                                   |
-| **[Factory](./factory/README-FACTORY.md)**       | Quando a criação de objetos começa a ficar complexa, como em APIs, frameworks, integrações ou objetos com regras de construção.                           |
-| **[Singleton](./singleton/README-SINGLETON.md)** | Quando faz sentido ter uma única instância compartilhada, como pool de conexão, configuração global ou cache. Use com cautela por causa de estado global. |
-| **[Decorator](./decorator/README-DECORATOR.md)** | Quando você quer adicionar comportamento sem alterar o objeto original, como em middlewares, interceptors, logs, validações ou extensões opcionais.       |
-| **[Strategy](./strategy/README-STRATEGY.md)**    | Quando você precisa trocar algoritmos ou regras em tempo de execução, como validação, ordenação, autenticação, cálculo de frete ou regras de desconto.    |
-| **[Adapter](./adapter/README-ADAPTER.md)**       | Quando você precisa conectar interfaces incompatíveis, como APIs externas, sistemas legados ou migração de bibliotecas.                                   |
+| Pattern | When to use |
+| ------- | ----------- |
+| **[Observer](./observer/README-OBSERVER.md)** | When several parts of the system need to react to changes, such as events, webhooks, notifications, or state changes. |
+| **[Factory](./factory/README-FACTORY.md)** | When object creation starts to become complex, such as in APIs, frameworks, integrations, or objects with construction rules. |
+| **[Singleton](./singleton/README-SINGLETON.md)** | When it makes sense to have a single shared instance, such as a connection pool, global configuration, or cache. Use it carefully because of global state. |
+| **[Decorator](./decorator/README-DECORATOR.md)** | When you want to add behavior without changing the original object, such as in middlewares, interceptors, logs, validations, or optional extensions. |
+| **[Strategy](./strategy/README-STRATEGY.md)** | When you need to swap algorithms or rules at runtime, such as validation, sorting, authentication, shipping calculation, or discount rules. |
+| **[Adapter](./adapter/README-ADAPTER.md)** | When you need to connect incompatible interfaces, such as external APIs, legacy systems, or library migrations. |
 
-## Referências e Inspirações
+## 🔎 References and Inspirations
 
-Este projeto foi criado usando como referência e inspiração conteúdos que explicam Design Patterns de forma prática e acessível:
+This project was created using practical and accessible Design Patterns content as reference and inspiration:
 
 - [Os 6 Design Patterns mais usados - Arthur Takeda](https://youtu.be/G-O90vR7SCU?si=flqiD-JxO6Tk7mPf)
-- [Refactoring Guru - Design Patterns](https://refactoring.guru/pt-br/design-patterns)
+- [Refactoring Guru - Design Patterns](https://refactoring.guru/design-patterns)
+- [Refactoring Guru - Design Patterns em Português](https://refactoring.guru/pt-br/design-patterns)
 
-## 🤝 Contribuições
+## 🤝 Contributions
 
-Contribuições são bem-vindas! Se você deseja adicionar novos exemplos, melhorar os existentes ou corrigir erros:
+Contributions are welcome! If you want to add new examples, improve existing ones, or fix errors:
 
-1. Faça um fork do repositório
-2. Crie sua branch de feature (`git checkout -b feature/novo-padrao`)
-3. Commit suas mudanças (`git commit -m 'Adiciona exemplo do padrão X'`)
-4. Push para a branch (`git push origin feature/novo-padrao`)
-5. Abra um Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/new-pattern`)
+3. Commit your changes (`git commit -m 'Add pattern X example'`)
+4. Push to the branch (`git push origin feature/new-pattern`)
+5. Open a Pull Request
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está licenciado sob a [MIT License](https://choosealicense.com/licenses/mit/).
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ---
 
-⭐ Se este repositório foi útil para você, considere dar uma estrela!
+⭐ If this repository was useful to you, consider giving it a star!

@@ -1,37 +1,39 @@
-# Strategy (Estratégia)
+# Strategy
 
-> (Padrão Comportamental)
+🇧🇷 [Veja em Português](./README-STRATEGY.pt-BR.md)
 
-### 😠 Problema
+> (Behavioral Pattern)
 
-Imagine que você tem uma regra que pode ser calculada de várias formas, como frete comum, frete expresso ou retirada na loja.
+### 😠 Problem
 
-Sem um padrão, é comum criar um método cheio de condicionais. Cada novo algoritmo aumenta esse método e obriga a classe principal a conhecer todos os detalhes.
+Imagine you have a rule that can be calculated in several ways, such as standard shipping, express shipping, or in-store pickup.
 
-### 😁 Solução
+Without a pattern, it is common to create a method full of conditionals. Each new algorithm grows that method and forces the main class to know all the details.
 
-O Strategy define uma família de algoritmos, coloca cada algoritmo em uma classe separada e faz todos seguirem a mesma interface.
+### 😁 Solution
 
-O cliente usa a interface comum e pode trocar a estratégia em tempo de execução, sem precisar saber os detalhes da implementação escolhida.
+Strategy defines a family of algorithms, puts each algorithm in a separate class, and makes all of them follow the same interface.
 
-### 🤔 Analogia com o mundo real
+The client uses the common interface and can swap the strategy at runtime without needing to know the details of the chosen implementation.
 
-Pense em um aplicativo de mapas. Você pode escolher ir de carro, a pé ou de bicicleta. O destino é o mesmo, mas a estratégia para calcular o caminho muda.
+### 🤔 Real-world Analogy
 
-### 📝 Exemplo
+Think about a maps application. You can choose to go by car, walking, or by bike. The destination is the same, but the strategy to calculate the route changes.
 
-Nesse diretório, você encontrará um exemplo de implementação do padrão Strategy no diretório **src-with-pattern** e outro exemplo sem a utilização do padrão no diretório **src-without-pattern**.
+### 📝 Example
 
-O exemplo usa uma calculadora de frete com estratégias para frete comum, expresso e retirada.
+In this directory, you will find a Strategy implementation example in **src-with-pattern** and another example without using the pattern in **src-without-pattern**.
 
-#### Vantagens & Desvantagens
+The example uses a shipping calculator with strategies for standard shipping, express shipping, and pickup.
 
-| Prós                                                                                  | Contras                                                                                              |
-| ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Remove condicionais grandes de classes que deveriam apenas usar o algoritmo.           | Pode criar várias classes pequenas, o que pode ser exagero para regras muito simples.                 |
-| Facilita trocar o algoritmo em tempo de execução.                                      | O cliente precisa saber qual estratégia escolher ou ter outro ponto do sistema para decidir isso.     |
-| Ajuda a adicionar novos algoritmos sem alterar a classe que usa a estratégia.           | Estratégias muito parecidas podem gerar duplicação se não forem bem organizadas.                      |
+#### Advantages & Disadvantages
 
-### Minha Opinião
+| Pros | Cons |
+| ---- | ---- |
+| Removes large conditionals from classes that should only use the algorithm. | Can create several small classes, which may be overkill for very simple rules. |
+| Makes it easy to swap the algorithm at runtime. | The client needs to know which strategy to choose, or another part of the system must decide it. |
+| Helps add new algorithms without changing the class that uses the strategy. | Very similar strategies can create duplication if they are not organized well. |
 
-É um dos padrões mais úteis para regras de negócio que mudam bastante. Quando você vê muitos `if` ou `switch` escolhendo algoritmos, Strategy costuma ser uma boa opção.
+### My Opinion
+
+It is one of the most useful patterns for business rules that change often. When you see many `if` or `switch` statements choosing algorithms, Strategy is usually a good option.

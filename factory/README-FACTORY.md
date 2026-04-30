@@ -1,37 +1,39 @@
-# Factory (Fábrica)
+# Factory
 
-> (Padrão Criacional)
+🇧🇷 [Veja em Português](./README-FACTORY.pt-BR.md)
 
-### 😠 Problema
+> (Creational Pattern)
 
-Imagine que você precisa criar objetos diferentes dependendo de uma decisão do sistema. Por exemplo: enviar uma notificação por e-mail, SMS ou outro canal.
+### 😠 Problem
 
-Se essa decisão fica espalhada pelo código, vários lugares passam a ter condicionais e instanciar classes diretamente. Quando um novo tipo surge, você precisa alterar muitos pontos do sistema.
+Imagine you need to create different objects depending on a system decision. For example: sending a notification by email, SMS, or another channel.
 
-### 😁 Solução
+If this decision is spread across the code, several places start to have conditionals and instantiate classes directly. When a new type appears, you need to change many parts of the system.
 
-O Factory centraliza a criação dos objetos em um método ou classe especializada.
+### 😁 Solution
 
-Em vez do cliente decidir diretamente qual classe instanciar, ele pede para a factory criar o objeto correto. Assim, a lógica de criação fica em um ponto claro e mais fácil de manter.
+Factory centralizes object creation in a specialized method or class.
 
-### 🤔 Analogia com o mundo real
+Instead of the client deciding directly which class to instantiate, it asks the factory to create the correct object. This keeps creation logic in a clear place that is easier to maintain.
 
-Pense em uma pizzaria. Você pede uma pizza de calabresa, portuguesa ou marguerita, mas não monta a pizza manualmente. A cozinha sabe quais ingredientes usar e entrega o produto pronto.
+### 🤔 Real-world Analogy
 
-### 📝 Exemplo
+Think about a pizza shop. You order pepperoni, Portuguese, or margherita pizza, but you do not assemble it manually. The kitchen knows which ingredients to use and delivers the final product.
 
-Nesse diretório, você encontrará um exemplo de implementação do padrão Factory no diretório **src-with-pattern** e outro exemplo sem a utilização do padrão no diretório **src-without-pattern**.
+### 📝 Example
 
-O exemplo usa uma factory para criar notificadores de e-mail e SMS.
+In this directory, you will find a Factory implementation example in **src-with-pattern** and another example without using the pattern in **src-without-pattern**.
 
-#### Vantagens & Desvantagens
+The example uses a factory to create email and SMS notifiers.
 
-| Prós                                                                                  | Contras                                                                                               |
-| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Centraliza a criação de objetos e evita lógica de decisão espalhada.                   | Pode adicionar uma camada extra em casos onde a criação é simples demais.                              |
-| Facilita adicionar novos tipos de objetos com menos impacto no código cliente.         | A factory pode crescer demais se passar a concentrar muitas regras diferentes.                         |
-| Ajuda o cliente a depender de abstrações em vez de classes concretas.                  | Ainda é preciso alterar a factory quando um novo tipo é incluído, dependendo da abordagem escolhida.   |
+#### Advantages & Disadvantages
 
-### Minha Opinião
+| Pros | Cons |
+| ---- | ---- |
+| Centralizes object creation and avoids scattered decision logic. | Can add an extra layer in cases where creation is too simple. |
+| Makes it easier to add new object types with less impact on client code. | The factory can grow too much if it starts concentrating many different rules. |
+| Helps the client depend on abstractions instead of concrete classes. | Depending on the chosen approach, the factory still needs to change when a new type is added. |
 
-É um dos padrões mais fáceis de aplicar no dia a dia. Vale muito quando a criação de objetos começa a ter regras, tipos diferentes ou condicionais repetidas.
+### My Opinion
+
+It is one of the easiest patterns to apply in daily work. It is very useful when object creation starts to have rules, different types, or repeated conditionals.
